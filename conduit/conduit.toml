@@ -1,0 +1,16 @@
+[global]
+server_name = "chat.lms.local"
+database_path = "/var/lib/conduit/data"
+database_backend = "rocksdb"
+port = 6167
+# Max size for uploads
+max_request_size = 100_000_000 # in bytes
+allow_registration = true
+allow_federation = false
+allow_check_for_updates = false
+# Server to get public keys from. You probably shouldn't change this
+trusted_servers = ["matrix.org"]
+# max_concurrent_requests = 500 # How many requests Conduit sends to other servers at the same time
+# log = "warn,state_res=warn,rocket=off,_=off,sled=off"
+address = "0.0.0.0"
+# below this line i add a registration token, so my config is not exactly the same as here
