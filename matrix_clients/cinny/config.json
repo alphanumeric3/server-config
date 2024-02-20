@@ -1,0 +1,8 @@
+{
+  "defaultHomeserver": 0,
+  "homeserverList": [
+    "https://chat.lms.local",
+    "http://localhost:6167"
+  ],
+  "allowCustomHomeservers": true
+}

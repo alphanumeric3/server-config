@@ -1,0 +1,51 @@
+* {
+	tls /etc/pki/caddy/server.crt /etc/pki/caddy/server.key
+}
+
+lms.local {
+	root * /var/www/html
+	file_server
+	file_server /doc/* browse
+	redir /doc /doc/
+}
+
+chat.lms.local {
+	header /.well-known/matrix/* Content-Type application/json
+	header /.well-known/matrix/* Access-Control-Allow-Origin *
+	# respond /.well-known/matrix/server `{"m.server": "chat.lms.local:443"}`
+	respond /.well-known/matrix/client `{"m.homeserver": {"base_url": "https://chat.lms.local"}}`
+
+	reverse_proxy /_matrix/* localhost:6167
+}
+
+cinny.lms.local {
+	root * /var/www/cinny/dist/
+	file_server
+}
+
+element.lms.local {
+	root * /var/www/element/
+	file_server
+}
+
+caddy-doc.lms.local {
+	root * /var/www/caddy-doc/
+
+	file_server
+	templates {
+	}
+
+	encode zstd gzip
+
+	try_files {path}.html {path}
+
+	redir /docs/json /docs/json/
+	redir /docs/modules /docs/modules/
+	rewrite /docs/json/* /docs/json/index.html
+	rewrite /docs/modules/* /docs/modules/index.html
+	rewrite /docs/* /docs/index.html
+}
+
+git.lms.local {
+	reverse_proxy localhost:3005
+}

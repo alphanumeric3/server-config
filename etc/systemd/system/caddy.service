@@ -1,0 +1,20 @@
+[Service]
+Type=simple
+User=caddy
+Group=caddy
+WorkingDirectory=/etc/caddy/
+ExecStart=/usr/local/bin/caddy run
+ExecReload=/usr/local/bin/caddy reload
+Restart=always
+PrivateTmp=true
+# allow caddy to bind to low ports
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+# limit the service
+NoNewPrivileges=true
+ProtectHome=true
+PrivateDevices=true
+ProtectKernelTunables=true
+
+[Install]
+WantedBy=multi-user.target

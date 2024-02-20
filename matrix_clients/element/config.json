@@ -1,0 +1,198 @@
+{
+    "default_server_config": {
+        "m.homeserver": {
+            "base_url": "https://chat.lms.local",
+            "server_name": "expiremental server!"
+        }
+    },
+    "disable_custom_urls": false,
+    "disable_guests": true,
+    "disable_login_language_selector": false,
+    "disable_3pid_login": false,
+    "brand": "element",
+    "integrations_ui_url": "https://scalar.vector.im/",
+    "integrations_rest_url": "https://scalar.vector.im/api",
+    "integrations_widgets_urls": [
+        "https://scalar.vector.im/_matrix/integrations/v1",
+        "https://scalar.vector.im/api",
+        "https://scalar-staging.vector.im/_matrix/integrations/v1",
+        "https://scalar-staging.vector.im/api",
+        "https://scalar-staging.riot.im/scalar/api"
+    ],
+    "default_country_code": "GB",
+    "show_labs_settings": true,
+    "features": {
+    	"feature_pinning": "true"
+    },
+	"branding": {
+		"auth_header_logo_url": "auth_header_logo.png",
+		"welcome_background_url": [
+			"welcome_bg.png"
+		],
+		"auth_footer_links": [
+			{
+			  "text": "link",
+			  "url": "http://_gateway"
+			}
+		]
+	},
+    "default_federate": true,
+    "default_theme": "light",
+    "room_directory": {
+        "servers": ["chat.lms.local"]
+    },
+    "enable_presence_by_hs_url": {
+        "https://matrix.org": false,
+        "https://matrix-client.matrix.org": false
+    },
+  "setting_defaults": {
+    "breadcrumbs": true,
+    "custom_themes": [
+      {
+        "name": "CPF Light (chat.cpf-demo.s.modular.im)",
+        "is_dark": false,
+        "fonts": {
+          "general": "'Inter', 'Twemoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Arial', 'Helvetica', sans-serif, 'Noto Color Emoji'"
+        },
+        "colors": {
+          "accent": "#0066FF",
+          "primary-color": "#2E2F32",
+          "warning-color": "#ED3A44",
+          "sidebar-color": "#011553",
+          "roomlist-background-color": "#F4F6FF",
+          "roomlist-text-color": "#61708B",
+          "roomlist-text-secondary-color": "#61708B",
+          "roomlist-highlights-color": "#ffffff",
+          "roomlist-separator-color": "#e3e8f0",
+          "timeline-background-color": "#ffffff",
+          "timeline-text-color": "#2e2f32",
+          "timeline-text-secondary-color": "#61708b",
+          "timeline-highlights-color": "#F4F6FF",
+          "togglesw-off-color": "#61708b",
+          "quinary-content": "#E3E8F0",
+          "eventbubble-self-bg": "#E7E8F3",
+          "username-colors": [
+            "#0066FF",
+            "#AB1BA6",
+            "#7DBE47",
+            "#E9386A",
+            "#E96208",
+            "#009DD7",
+            "#3D36FF",
+            "#7DBE47"
+          ],
+          "avatar-background-colors": [
+            "#7DBE47",
+            "#0066FF",
+            "#AB1BA6"
+          ]
+        }
+      },
+      {
+        "name": "CPF Dark",
+        "is_dark": true,
+        "fonts": {
+          "general": "'Inter', 'Twemoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Arial', 'Helvetica', sans-serif, 'Noto Color Emoji'"
+        },
+        "colors": {
+          "accent": "#0066FF",
+          "primary-color": "#ADB3BF",
+          "warning-color": "#ED3A44",
+          "sidebar-color": "#00114A",
+          "roomlist-background-color": "#010C30",
+          "roomlist-text-color": "#EDF3FF",
+          "roomlist-text-secondary-color": "#A1B2D1",
+          "roomlist-highlights-color": "#051547",
+          "roomlist-separator-color": "#000000",
+          "timeline-background-color": "#010C30",
+          "timeline-text-color": "#EDF3FF",
+          "timeline-text-secondary-color": "#758AB5",
+          "timeline-highlights-color": "#051547",
+          "togglesw-off-color": "#758AB5",
+          "quinary-content": "#394049",
+          "eventbubble-self-bg": "#101042",
+          "username-colors": [
+            "#0066FF",
+            "#AB1BA6",
+            "#7DBE47",
+            "#E9386A",
+            "#E96208",
+            "#009DD7",
+            "#3D36FF",
+            "#7DBE47"
+          ],
+          "avatar-background-colors": [
+            "#7DBE47",
+            "#0066FF",
+            "#AB1BA6"
+          ]
+        }
+      },
+      {
+        "name": "Verji_light (verji.app)",
+        "is_dark": false,
+        "fonts": {
+          "faces": [
+            {
+              "font-family": "Jost"
+            }
+          ],
+          "general": "Jost, sans-serif"
+        },
+        "colors": {
+          "accent-color": "#578E2F",
+          "primary-color": "#666699",
+          "warning-color": "#bf616a",
+          "sidebar-color": "#D8D8D8",
+          "roomlist-background-color": "#E8E8E8",
+          "roomlist-text-color": "#d08770",
+          "roomlist-text-secondary-color": "#3b4252",
+          "roomlist-highlights-color": "#eceff4",
+          "roomlist-separator-color": "#eceff4",
+          "timeline-background-color": "#F8F8F8",
+          "timeline-text-color": "#2e3440",
+          "timeline-text-secondary-color": "#3b4252",
+          "timeline-highlights-color": "#FEFEFE",
+          "reaction-row-button-selected-bg-color": "#bf616a"
+        }
+      },
+      {
+        "name": "Verji_dark",
+        "is_dark": true,
+        "fonts": {
+          "faces": [
+            {
+              "font-family": "Jost"
+            }
+          ],
+          "general": "Jost, sans-serif"
+        },
+        "colors": {
+          "accent-color": "#578E2F",
+          "primary-color": "#666699",
+          "warning-color": "#bf616a",
+          "sidebar-color": "#242424",
+          "roomlist-background-color": "#191919",
+          "roomlist-text-color": "#ebcb8b",
+          "roomlist-text-secondary-color": "#e5e9f0",
+          "roomlist-highlights-color": "#2e3440",
+          "roomlist-separator-color": "#434c5e",
+          "timeline-background-color": "#202020",
+          "timeline-text-color": "#eceff4",
+          "timeline-text-secondary-color": "#666699",
+          "timeline-highlights-color": "#484848",
+          "reaction-row-button-selected-bg-color": "#bf616a"
+        }
+      }
+    ]
+  },
+    "jitsi": {
+        "preferred_domain": "meet.element.io"
+    },
+    "element_call": {
+        "url": "https://call.element.io",
+        "participant_limit": 8,
+        "brand": "Element Call"
+    },
+    "map_style_url": "https://api.maptiler.com/maps/streets/style.json?key=fU3vlMsMn4Jb6dnEIFsx"
+}

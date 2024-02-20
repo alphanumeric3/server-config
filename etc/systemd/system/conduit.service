@@ -1,0 +1,20 @@
+[Unit]
+Description=conduit.test.squarebowl.club Conduit Matrix Server
+After=network.target
+
+[Service]
+Environment="CONDUIT_CONFIG=/var/lib/conduit/conduit.toml"
+User=conduit
+Group=conduit
+Restart=always
+ExecStart=/usr/local/bin/conduit
+NoNewPrivileges=true
+ReadWritePaths=/var/lib/conduit/
+ProtectSystem=strict
+ProtectHome=true
+# limit syscalls
+SystemCallFilter=@system-service
+PrivateDevices=true
+
+[Install]
+WantedBy=multi-user.target
