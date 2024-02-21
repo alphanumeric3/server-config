@@ -49,6 +49,13 @@
     "breadcrumbs": true,
     "custom_themes": [
       {
+      	"name": "_gateway's theme",
+      	"is_dark": true,
+      	"colors": {
+      		"accent": "#3d009e"
+      	}
+      },
+      {
         "name": "CPF Light (chat.cpf-demo.s.modular.im)",
         "is_dark": false,
         "fonts": {
