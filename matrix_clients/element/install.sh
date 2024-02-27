@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo cp * /var/www/element/
+sudo cp config.json *.png /var/www/element/
