@@ -1,6 +1,6 @@
-{
-	admin off
-}
+#{
+#	admin off
+#}
 
 * {
 	tls /etc/pki/caddy/server.crt /etc/pki/caddy/server.key
