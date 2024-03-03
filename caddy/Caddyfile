@@ -19,6 +19,8 @@ chat.lms.local {
 	# respond /.well-known/matrix/server `{"m.server": "chat.lms.local:443"}`
 	respond /.well-known/matrix/client `{"m.homeserver": {"base_url": "https://chat.lms.local"}}`
 
+	redir / https://element.lms.local
+	
 	reverse_proxy /_matrix/* localhost:6167
 }
 
