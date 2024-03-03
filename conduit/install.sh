@@ -33,6 +33,7 @@ fi
 if [ ! -f /etc/systemd/system/conduit.service ]; then
 	echo "Adding to systemd"
 	sudo cp conduit.service /etc/systemd/system/conduit.service
+	echo "Starting Conduit"
 	sudo systemctl daemon-reload
 	sudo systemctl enable --now conduit
 else
