@@ -1,0 +1,34 @@
+---
+- hosts: all
+  become: yes
+
+  handlers:
+  - name: Reload Caddy
+    service:
+      name: caddy
+      state: reloaded
+
+  tasks:
+  - name: Create the Gitea user & group
+    user:
+      name: git
+      group: git
+      system: true
+
+  - name: Create directories
+    file:
+      path: "{{ item }}"
+      owner: git
+      group: git
+      mode: "740"
+    with_items:
+      - /etc/gitea
+      - /var/lib/gitea
+  
+  - name: Add the Caddy configuration
+    copy:
+      src: ./files/caddy.conf
+      dest: "/etc/caddy/conf.d/git.lms.local.conf"
+      owner: caddy
+      group: caddy      
+    notify: Reload Caddy
