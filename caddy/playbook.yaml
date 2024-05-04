@@ -1,0 +1,44 @@
+---
+- hosts: all
+  become: yes
+
+  handlers:
+  - name: Reload Caddy
+    service:
+      name: caddy
+      state: reloaded
+
+  tasks:
+  - name: Create the Caddy user & group
+    user:
+      name: caddy
+      group: caddy
+      home: /var/lib/caddy
+      system: true
+
+  - name: Create Caddy config directory
+    file:
+      path: /etc/caddy/conf.d
+      owner: caddy
+      group: caddy
+      mode: "740"
+      state: directory
+        
+  - name: Add the Caddy configuration
+    copy:
+      src: Caddyfile
+      dest: /etc/caddy/Caddyfile
+      owner: caddy
+      group: caddy      
+    notify: Reload Caddy
+    tags: config
+
+  - name: Add the systemd unit
+    copy:
+      src: caddy.service
+      dest: /etc/systemd/system/
+
+  - name: Enable the service
+    service:
+      name: caddy
+      enabled: true

@@ -20,7 +20,7 @@ chat.lms.local {
 	respond /.well-known/matrix/client `{"m.homeserver": {"base_url": "https://chat.lms.local"}}`
 
 	redir / https://element.lms.local
-	
+
 	reverse_proxy /_matrix/* localhost:6167
 }
 
@@ -52,6 +52,4 @@ caddy-doc.lms.local {
 	rewrite /docs/* /docs/index.html
 }
 
-git.lms.local {
-	reverse_proxy localhost:3005
-}
+import conf.d/*.conf
