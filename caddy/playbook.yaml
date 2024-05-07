@@ -9,12 +9,10 @@
       state: reloaded
 
   tasks:
-  - name: Create the Caddy user & group
-    user:
+  - name: Install Caddy
+    package:
       name: caddy
-      group: caddy
-      home: /var/lib/caddy
-      system: true
+      state: present
 
   - name: Create Caddy config directory
     file:
@@ -36,7 +34,7 @@
   - name: Add the systemd unit
     copy:
       src: caddy.service
-      dest: /etc/systemd/system/
+      dest: /etc/systemd/system/caddy.d/
 
   - name: Enable the service
     service:
